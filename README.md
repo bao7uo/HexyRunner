@@ -47,7 +47,7 @@ C:\>
 
 ## Potential Future Improvements
 
-- When no shellcode is supplied, default to contents of `&lt;HexyRunner binary filename&gt;.txt`
+- When no shellcode is supplied, default to contents of `<HexyRunner binary filename>.txt`
 - Port to Linux and other operating systems
 
 ## Contribute
