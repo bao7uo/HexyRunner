@@ -1,4 +1,7 @@
 # HexyRunner
+[![Language](https://img.shields.io/badge/Lang-CSharp-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-purple.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Accepts raw hex shellcode (e.g. msfvenom hex format) as a command line argument, and runs it
 
 ## Build
@@ -41,3 +44,15 @@ Just run:
 C:\>HexyRunner 9090c3
 C:\>
 ```
+
+## Future Improvements
+
+When no shellcode is supplied, default to contents of <HexyRunner binary name>.txt
+
+## Contribute
+Contributions, feedback and ideas will be appreciated.
+
+## License notice
+Copyright (C) 2018 Paul Taylor
+
+See LICENSE file for details.
