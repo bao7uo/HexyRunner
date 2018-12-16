@@ -50,6 +50,10 @@ C:\>
 - When no shellcode is supplied, default to contents of `<Filename of HexyRunner binary>.txt`
 - Port to Linux and other operating systems
 
+## Credits
+- Some code is based on examples given in Gray Hat C# by Brandon Perry
+- Inspiration from Alexandre Teyar github.com/AresS31 
+
 ## Contribute
 Contributions, feedback and ideas will be appreciated.
 
