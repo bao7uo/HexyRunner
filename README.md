@@ -45,9 +45,10 @@ C:\>HexyRunner 9090c3
 C:\>
 ```
 
-## Future Improvements
+## Potential Future Improvements
 
-When no shellcode is supplied, default to contents of &lt;HexyRunner binary filename&gt;.txt
+- When no shellcode is supplied, default to contents of `&lt;HexyRunner binary filename&gt;.txt`
+- Port to Linux and other operating systems
 
 ## Contribute
 Contributions, feedback and ideas will be appreciated.
