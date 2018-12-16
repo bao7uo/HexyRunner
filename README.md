@@ -46,7 +46,7 @@ C:\>HexyRunner 9090c3
 C:\>
 ```
 
-- Or, place it into a text file (`<Binary Name without extension>.txt`):
+- Or, place it into a text file named `[Binary Name without extension].txt`:
 
 ```
 C:\>echo 9090c3 > HexyRunner.txt
