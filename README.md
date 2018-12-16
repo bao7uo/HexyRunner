@@ -2,13 +2,12 @@
 [![Language](https://img.shields.io/badge/Lang-CSharp-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-purple.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Accepts raw hex shellcode (e.g. msfvenom hex format) as a command line argument, and runs it
+Accepts raw hex shellcode (e.g. msfvenom hex format) as a command line argument or a text file, and runs it
 
 ## Build
 
-For 32-bit shellcode: `csc -platform:x86 HexyRunner.cs`
-
-For 64-bit shellcode: `csc -platform:x64 HexyRunner.cs`
+- For 32-bit shellcode: `csc -platform:x86 HexyRunner.cs`
+- For 64-bit shellcode: `csc -platform:x64 HexyRunner.cs`
 
 ## Generate Shellcode
 
@@ -38,16 +37,25 @@ NOP
 RET
 ```
 
-Just run:
+Assemble to a hex string, and...
+
+- Provide as a command line argument:
 
 ```
 C:\>HexyRunner 9090c3
 C:\>
 ```
 
+- Or, place it into a text file (`<Binary Name without extension>.txt`):
+
+```
+C:\>echo 9090c3 > HexyRunner.txt
+C:\>HexyRunner
+C:\>
+```
+
 ## Potential Future Improvements
 
-- When no shellcode is supplied, default to contents of `<Filename of HexyRunner binary>.txt`
 - Port to Linux and other operating systems
 
 ## Credits
