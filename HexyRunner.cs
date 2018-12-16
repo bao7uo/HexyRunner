@@ -1,6 +1,8 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace HexyRunner
 {
@@ -19,7 +21,19 @@ namespace HexyRunner
 
         public static void Main(string[] args)
         {
-            byte[] hexy = Str2ByteArray(args[0]);
+
+            string input;
+
+            if (args.Length > 0) input = args[0];
+            else {
+                string fileName = Process.GetCurrentProcess().MainModule.FileName;
+                fileName = fileName.Substring(0, fileName.LastIndexOf(".")) + ".txt";
+                input = File.ReadAllLines(fileName)[0].Trim(new char[] {'\n', '\r', '\t', ' '});
+            }
+
+            Console.WriteLine(input);
+
+            byte[] hexy = Str2ByteArray(input);
 
             IntPtr pointer = VirtualAlloc(IntPtr.Zero, (IntPtr) hexy.Length, (IntPtr) 0x1000, (IntPtr) 0x40);
             Marshal.Copy(hexy, 0, pointer, hexy.Length);
