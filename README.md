@@ -2,7 +2,7 @@
 [![Language](https://img.shields.io/badge/Lang-CSharp-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-purple.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Accepts raw hex shellcode (e.g. msfvenom hex format) as a command line argument or a text file, and runs it.
+Takes raw hex shellcode (e.g. msfvenom hex format) from a cmd line arg, text file, or URL download and runs it.
 
 ## Build
 
@@ -56,8 +56,16 @@ C:\>HexyRunner
 C:\>
 ```
 
+- Or, place a custom URL in the source code and recompile. If no cmd line arg is supplied and no .txt file is present, the shellcode will be downloaded from the hardcoded URL:
+
+```
+C:\>HexyRunner
+C:\>
+```
+
 ## Potential Future Improvements
 
+- Add other methods to obtain shellcode
 - Port to Linux and other operating systems
 
 ## Credits
