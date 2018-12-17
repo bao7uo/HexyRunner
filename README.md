@@ -11,7 +11,7 @@ Accepts raw hex shellcode (e.g. msfvenom hex format) as a command line argument 
 
 ## Generate Shellcode
 
-N.B. To avoid crashes, finish with a RET, or if using msfvenom use EXIT_FUNC=THREAD or similar.
+N.B. To avoid crashes, finish with a `RET`, or if using msfvenom use `EXIT_FUNC=THREAD` or similar.
 
 - 32-bit test payload
 
